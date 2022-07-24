@@ -2,12 +2,14 @@ import pandas as pd
 msg=pd.read_csv('naivetext.csv',names=['message','label']);
 print('The dimensions of the dataset',msg.shape) 
 msg['labelnum']=msg.label.map({'pos':1,'neg':0});
-X=msg.message 
+X=msg.message   
 y=msg.labelnum 
 print(X) 
 print(y) 
 #splitting the dataset into train and test data 
-from sklearn.cross_validation import train_test_split 
+# if sklearn.cross_validation doesn't work try changing it to sklearn.model_selection
+# if sklearn.model_selection doesn't work try changing it to sklearn.cross_validation
+from sklearn.model_selection import train_test_split 
 xtrain,xtest,ytrain,ytest=train_test_split(X,y) 
 print ('\n The total number of Training Data :',ytrain.shape)
 print ('\n The total number of Test Data :',ytest.shape) 
