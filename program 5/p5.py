@@ -107,7 +107,7 @@ def classify(node,x_test,features):
         if x_test[pos]==value:
             classify(n,x_test,features)
             
-
+'''Main program'''
 dataset,features=load_csv("id3.csv")
 node1=build_tree(dataset,features)
 
