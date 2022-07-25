@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 import csv
 from pgmpy.estimators import MaximumLikelihoodEstimator
-from pgmpy.models import BayesianModel
+from pgmpy.models import BayesianNetwork #default
 from pgmpy.inference import VariableElimination
 
 #read Cleveland Heart Disease data
@@ -15,8 +15,9 @@ print(heartDisease.head())
 print('\n Attributes and datatypes')
 print(heartDisease.dtypes)
 
-#Creat Model- Bayesian Network
-model = BayesianModel([('age','heartdisease'),('sex','heartdisease'),('exang','heartdisease'),('cp','heartdisease'),('heartdisease',
+# default was BayesianModel instead of BayesianNetwork
+#Creat Model- Bayesian Network 
+model = BayesianNetwork([('age','heartdisease'),('sex','heartdisease'),('exang','heartdisease'),('cp','heartdisease'),('heartdisease',
 'restecg'),('heartdisease','chol')])
 
 
